@@ -1,0 +1,42 @@
+<header>
+  <!-- <nav class="navbar">
+    <div class="logo" [routerLink]="['/']" routerLinkActive="router-link-active">inQuiry</div>
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      <div class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://inquiry.sunbird.org/learn/overview" target="_blank">Documentation</a></li>
+         <li class="services">
+          <a href="/">Services</a>
+          <ul class="dropdown">
+            <li><a href="/">Dropdown 1 </a></li>
+            <li><a href="/">Dropdown 2</a></li>
+          </ul> 
+        </li>
+        <li><a href="/">About</a></li>
+        <li><a href="https://github.com/project-sunbird/sunbird-community/discussions" target="_blank">Github</a></li>
+      </div>
+    </ul>
+  </nav>
+ -->
+
+
+
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <span class="logo" routerLink="/">inQuiry</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }" >Home</button>
+    <a mat-button href="https://inquiry.sunbird.org">Documentation</a>
+    <button mat-button routerLink="content-list" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }">About</button>
+    <button mat-button>About</button>
+    <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button> -->
+  </mat-toolbar>
+</header>
+
+<!-- https://www.makeuseof.com/responsive-navigation-bar-using-html-and-css/ -->

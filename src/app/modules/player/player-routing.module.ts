@@ -1,19 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { PlayerContentListComponent } from './components/player-content-list/player-content-list.component';
 import { PlayerComponent } from './components/player/player.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  // { path: 'player', loadChildren: () => import('./modules/player/player.module').then(m => m.PlayerModule) },
   { path: 'content-list', component: PlayerContentListComponent },
-  { path: 'player/:id', component: PlayerComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'play/:id', component: PlayerComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class PlayerRoutingModule { }
