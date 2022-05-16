@@ -1,3 +1,8 @@
-<section>
-  <quml-main-player *ngIf="playerConfig" [playerConfig]="playerConfig"></quml-main-player>
+<div class="btn-container">
+  <button mat-flat-button color="accent" (click)="openDialog()">
+    <mat-icon>edit</mat-icon>&nbsp;Edit Player Configurations
+  </button>
+</div>
+<section *ngIf="playerConfig">
+  <quml-main-player [playerConfig]="playerConfig"></quml-main-player>
 </section>

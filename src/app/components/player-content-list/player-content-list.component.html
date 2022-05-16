@@ -1,7 +1,22 @@
 <div class="container">
   <h2>Choose a content to play</h2>
+  <h3>Multiple choice questions</h3>
   <div class="content-box">
-    <div class="content" *ngFor="let content of contentList" (click)="playContent(content)">
+    <div class="content" *ngFor="let content of contentList.mcq" (click)="playContent(content)">
+      <h4>{{content?.name}}</h4>
+    </div>
+  </div>
+
+  <h3>Multiple choice questions with solutions</h3>
+  <div class="content-box">
+    <div class="content" *ngFor="let content of contentList.subjective" (click)="playContent(content)">
+      <h4>{{content?.name}}</h4>
+    </div>
+  </div>
+
+  <h3>Subjective Questions</h3>
+  <div class="content-box">
+    <div class="content" *ngFor="let content of contentList.subjective" (click)="playContent(content)">
       <h4>{{content?.name}}</h4>
     </div>
   </div>
