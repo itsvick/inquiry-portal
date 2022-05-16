@@ -1,9 +1,13 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
 <h2 mat-dialog-title color="primary">Edit the player configurations</h2>
 <form [formGroup]="editConfigForm" (ngSubmit)="onSubmit()">
   <mat-dialog-content>
     <h3>Use below form to edit the configurations, the player will take effect accordingly</h3>
     <div class="row">
-      <div class="column mr-8">
+      <div class="column mr-12">
         <h4 class="field-label">Show Question Feedback</h4>
         <mat-form-field appearance="fill">
           <mat-label>Choose Option</mat-label>
@@ -27,7 +31,7 @@
     </div>
 
     <div class="row">
-      <div class="column">
+      <div class="column mr-12">
         <h4 class="field-label">Choose Summary Type</h4>
         <mat-form-field appearance="fill">
           <mat-label>Choose Option</mat-label>
@@ -51,6 +55,7 @@
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-flat-button [mat-dialog-close]="editConfigForm.value" cdkFocusInitial color="accent" type="submit">Submit</button>
+    <button mat-flat-button [mat-dialog-close]="editConfigForm.value" cdkFocusInitial color="accent"
+      type="submit">Submit</button>
   </mat-dialog-actions>
 </form>

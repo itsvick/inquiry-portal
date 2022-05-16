@@ -19,7 +19,7 @@ export class DataService {
       .set('fields', 'ageGroup,appIcon,artifactUrl,attributions,audience,author,badgeAssertions,board,body,channel,code,concepts,contentCredits,contentType,contributors,createdBy,createdOn,creator,creators,description,displayScore,domain,editorState,flagReasons,flaggedBy,flags,framework,gradeLevel,identifier,itemSetPreviewUrl,keywords,language,languageCode,lastUpdatedOn,license,mediaType,medium,mimeType,name,originData,osId,owner,pkgVersion,publisher,questions,resourceType,scoreDisplayConfig,status,streamingUrl,subject,template,templateId,totalQuestions,totalScore,versionKey,visibility,year,primaryCategory,additionalCategories,interceptionPoints,interceptionType')
       .set('orgdetails', 'orgName,email')
       .set('licenseDetails', 'name,description,url');
-    return this.httpClient.get(`${this.baseUrl}${ApiEndPoints.getContent}${contentId}`, { params }).pipe(map((res: any) => {
+    return this.httpClient.get(`${ApiEndPoints.getContent}${contentId}`, { params }).pipe(map((res: any) => {
       if (res.result.content) {
         return res.result.content;
       }
@@ -28,7 +28,7 @@ export class DataService {
   }
 
   getQuestionSet(identifier: string) {
-    const hierarchy = this.httpClient.get(`${this.baseUrl}${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
+    const hierarchy = this.httpClient.get(`${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
     const questionSetResponse = this.httpClient.get(`${this.baseUrl}${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
     return (
       forkJoin([hierarchy, questionSetResponse]).pipe(map((res: any) => {

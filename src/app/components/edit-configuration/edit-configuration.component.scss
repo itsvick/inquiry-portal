@@ -7,12 +7,15 @@
 .column {
   display: flex;
   flex-direction: column;
-}
-
-.mr-8 {
-  margin-right: 8px;
+  width: 50%;
 }
 
 .field-label {
   font-weight: bold;
+}
+
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
 }

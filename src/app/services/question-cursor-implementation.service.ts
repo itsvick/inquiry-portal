@@ -17,7 +17,7 @@ export class QuestionCursorImplementationService implements QuestionCursor {
 
   getQuestions(identifiers: string[], parentId?: string): Observable<Question> {
     const option: any = {
-      url: `${this.baseUrl}${ApiEndPoints.questionList}`,
+      url: `${ApiEndPoints.questionList}`,
       data: {
         request: {
           search: { identifier: identifiers }
@@ -31,7 +31,7 @@ export class QuestionCursorImplementationService implements QuestionCursor {
 
   getQuestion(identifier: string): Observable<Question> {
     const option: any = {
-      url: `${this.baseUrl}${ApiEndPoints.questionList}`,
+      url: `${ApiEndPoints.questionList}`,
       data: {
         request: {
           search: { identifier: [identifier] }
@@ -42,8 +42,8 @@ export class QuestionCursorImplementationService implements QuestionCursor {
   };
 
   getQuestionSet(identifier: string): Observable<any> {
-    const hierarchy = this.dataService.get(`${this.baseUrl}${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
-    const questionSetResponse = this.dataService.get(`${this.baseUrl}${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
+    const hierarchy = this.dataService.get(`${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
+    const questionSetResponse = this.dataService.get(`${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
     return (
       forkJoin([hierarchy, questionSetResponse]).pipe(map((res: any) => {
         const questionSet = res[0]?.result.questionSet;

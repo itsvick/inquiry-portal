@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 import { SampleContentList } from './sample-content-list';
 
 @Component({
@@ -10,7 +11,7 @@ import { SampleContentList } from './sample-content-list';
 export class PlayerContentListComponent implements OnInit {
 
   contentList = SampleContentList;
-  constructor(private router: Router) { }
+  constructor(private router: Router, public navigationService: NavigationService) { }
 
   ngOnInit(): void {
   }

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { QumlPlayerConfig } from '@project-sunbird/sunbird-quml-player-v9/lib/quml-library-interface';
 import { DataService } from 'src/app/services/data.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 import { QuestionCursorImplementationService } from 'src/app/services/question-cursor-implementation.service';
 import { EditConfigurationComponent } from '../edit-configuration/edit-configuration.component';
 import { SamplePlayerData } from './player-data';
@@ -25,7 +26,8 @@ export class PlayerComponent implements OnInit {
     private dataService: DataService,
     private questionSetService: QuestionCursorImplementationService,
     private activatedRoute: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public navigationService: NavigationService
   ) { }
 
   ngOnInit(): void {
@@ -114,6 +116,10 @@ export class PlayerComponent implements OnInit {
 
     this.setConfig();
     this.changeConfig();
+  }
+
+  goBack() {
+    
   }
 
 }
