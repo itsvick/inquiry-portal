@@ -60,7 +60,7 @@ export class PlayerComponent implements OnInit {
   }
 
   changeConfig() {
-    const metadata = { ...this.playerConfig.metadata, name: 'New Name' };
+    const metadata = { ...this.playerConfig.metadata };
     this.playerConfig = undefined;
     setTimeout(() => {
       this.initializePlayer(metadata);
