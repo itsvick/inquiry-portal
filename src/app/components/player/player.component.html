@@ -7,6 +7,8 @@
     <mat-icon>edit</mat-icon>&nbsp;Edit Player Configurations
   </button>
 </mat-toolbar>
-<section *ngIf="playerConfig">
-  <quml-main-player [playerConfig]="playerConfig"></quml-main-player>
-</section>
+<div class="middle-section-set">
+  <section *ngIf="playerConfig" class="aspectratio" data-ratio="16:9">
+      <quml-main-player [playerConfig]="playerConfig"></quml-main-player>
+  </section>
+</div>
