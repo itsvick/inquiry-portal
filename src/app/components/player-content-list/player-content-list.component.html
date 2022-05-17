@@ -8,25 +8,25 @@
   </button> -->
 </mat-toolbar>
 <div class="container">
-  <h2>Choose a content to play</h2>
-  <h3>Multiple choice questions</h3>
+  <h2 class="my-20 mat-h2">Choose a content to play</h2>
+  <h3 class="mb-10 mat-h3">Multiple choice questions</h3>
   <div class="content-box">
-    <div class="content" *ngFor="let content of contentList.mcq" (click)="playContent(content)">
-      <h4>{{content?.name}}</h4>
+    <div class="common-contribution-card" *ngFor="let content of contentList.mcq" (click)="playContent(content)">
+      <h4 class="content-title ">{{content?.name}}</h4>
     </div>
   </div>
 
-  <h3>Multiple choice questions with solutions</h3>
+  <h3 class="my-10 mat-h3">Multiple choice questions with solutions</h3>
   <div class="content-box">
-    <div class="content" *ngFor="let content of contentList.subjective" (click)="playContent(content)">
-      <h4>{{content?.name}}</h4>
+    <div class="common-contribution-card " *ngFor="let content of contentList.subjective" (click)="playContent(content)">
+      <h4 class="content-title ">{{content?.name}}</h4>
     </div>
   </div>
 
-  <h3>Subjective Questions</h3>
-  <div class="content-box">
-    <div class="content" *ngFor="let content of contentList.subjective" (click)="playContent(content)">
-      <h4>{{content?.name}}</h4>
+  <h3 class="my-10 mat-h3">Subjective Questions</h3>
+  <div class="content-box mb-20">
+    <div class="common-contribution-card" *ngFor="let content of contentList.subjective" (click)="playContent(content)">
+      <h4 class="content-title ">{{content?.name}}</h4>
     </div>
   </div>
 </div>
