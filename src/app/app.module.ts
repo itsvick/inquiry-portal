@@ -25,6 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterComponent } from './components/filter/filter.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlayerComponent,
     FooterComponent,
     PlayerContentListComponent,
-    EditConfigurationComponent
+    EditConfigurationComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
