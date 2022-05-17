@@ -25,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { QuestionsetEditorComponent } from './components/questionset-editor/questionset-editor.component';
+import { CollectionEditorLibraryModule, EditorCursor } from '@project-sunbird/sunbird-collection-editor-v9';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlayerComponent,
     FooterComponent,
     PlayerContentListComponent,
-    EditConfigurationComponent
+    EditConfigurationComponent,
+    QuestionsetEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CollectionEditorLibraryModule
   ],
   providers: [
     {
