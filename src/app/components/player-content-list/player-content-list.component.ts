@@ -38,6 +38,7 @@ export class PlayerContentListComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredList.mcq = SampleContentList.mcq;
+    this.filteredList.sa = SampleContentList.sa;
     console.log('Filtered List', this.filteredList);
   }
 
