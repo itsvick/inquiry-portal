@@ -17,7 +17,8 @@ app.use(express.json())
 // app.get("/latex/convert", latexService.convert)
 // app.post("/latex/convert", bodyParser.json({ limit: '1mb' }), latexService.convert);
 app.all(['/api/framework/v1/read/*',
-     '/learner/framework/v1/read/*', 
+     '/learner/framework/v1/read/*',
+     '/learner/questionset/v1/hierarchy/*',
      '/api/channel/v1/read/*'], proxy(BASE_URL, {
     https: true,
     proxyReqPathResolver: function(req) {
