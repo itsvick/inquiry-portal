@@ -11,7 +11,6 @@ import { SampleContentList } from './sample-content-list';
 })
 export class PlayerContentListComponent implements OnInit {
 
-  contentList = SampleContentList;
   filteredList = {
     mcq: [],
     sa: []

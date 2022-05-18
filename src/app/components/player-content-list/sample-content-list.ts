@@ -1,4 +1,18 @@
-export const SampleContentList = {
+import { environment } from "../../../environments/environment";
+
+const devContents = {
+  mcq: [
+    { id: 'do_113534751604195328149', name: 'Questionset', category: 'vertical' },
+    { id: 'do_1135147715041853441338', name: 'Questionset AFL', category: 'vertical' },
+    { id: 'do_113455969933246464124', name: 'Test QuestionSet 2022', category: 'vertical' },
+    { id: 'do_113540307343040512182', name: 'Horizontal QuestionSet 1', category: 'horizontal' },
+    { id: 'do_113540311371423744194', name: 'Grid Layout QuestionSet 1', category: 'grid' },
+  ],
+  sa: [
+    { id: 'do_113540296505393152173', name: 'Questionset', category: 'vertical' },
+  ]
+};
+const stagingContents = {
   mcq: [
     {
       id: 'do_213536668306825216155',
@@ -52,3 +66,5 @@ export const SampleContentList = {
     }
   ]
 };
+
+export const SampleContentList: any = environment.baseUrl.includes('staging') ? stagingContents : devContents;
