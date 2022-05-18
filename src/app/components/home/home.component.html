@@ -1,9 +1,15 @@
 <main>
   <h1>What do you want to do?</h1>
   <section class="container">
+    <!-- <div class="card" (click)="openEditorPage()">
+      Create a question set
+    </div>
+    <div class="card" (click)="openPlayerPage()">
+      Play a question set -->
+
     <div class="flex-jc-center">
       <div class="card-cols d-flex">
-        <div class="text-center common-contribution-card">
+        <div class="text-center common-contribution-card" (click)="openEditorPage()">
           <div class="content">
             <i class="check circle icon"></i>
             <img class="mt-16" src="assets/images/icons/book.png" rel="placeholder">
@@ -18,6 +24,7 @@
           </div>
         </div>
       </div>
+   
     </div>
   </section>
 </main>

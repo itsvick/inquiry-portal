@@ -25,9 +25,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuestionsetEditorComponent } from './components/questionset-editor/questionset-editor.component';
+import { CollectionEditorLibraryModule, EditorCursor } from '@project-sunbird/sunbird-collection-editor-v9';
 import { FilterComponent } from './components/filter/filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { RouterModule } from '@angular/router';
+import { EditorCursorImplementationService } from './editor-cursor-implementation.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FooterComponent,
     PlayerContentListComponent,
     EditConfigurationComponent,
+    QuestionsetEditorComponent,
     FilterComponent
   ],
   imports: [
@@ -55,12 +59,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CollectionEditorLibraryModule,
+    RouterModule.forRoot([])
   ],
   providers: [
     {
       provide: QuestionCursor,
       useClass: QuestionCursorImplementationService
+    },
+    {
+      provide: EditorCursor,
+      useExisting: EditorCursorImplementationService
     }
   ],
   bootstrap: [AppComponent]
