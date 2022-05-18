@@ -4,9 +4,9 @@ export const questionSetEditorConfig = {
       contributionOrgId: '',
       user: {
         id: '5a587cc1-e018-4859-a0a8-e842650b9d64',
-        fullName: 'Vaibahv Bhuva',
-        firstName: 'Vaibhav',
-        lastName: 'Bhuva',
+        fullName: 'N11',
+        firstName: 'N11',
+        lastName: '',
         orgIds: ['01309282781705830427']
       },
       identifier: 'do_11352672140540313617', // do_11330102570702438417 , do_113449692707643392118, //do_113449692707643392118 , do_113460158539554816151
