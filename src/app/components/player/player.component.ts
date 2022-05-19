@@ -53,7 +53,7 @@ export class PlayerComponent implements OnInit {
   }
 
   setConfig() {
-    this.editConfig.showFeedback = this.playerConfig.metadata.children.every(child => child.showFeedback === "No") ? "Yes" : "No";
+    this.editConfig.showFeedback = this.playerConfig.metadata.children.every(child => child.showFeedback === "Yes") ? "Yes" : "No";
     this.editConfig.showSubmitConfirmation = this.playerConfig.metadata.requiresSubmit ? this.playerConfig.metadata.requiresSubmit : '';
     this.editConfig.summaryType = this.playerConfig.metadata.summaryType ? this.playerConfig.metadata.summaryType : '';
     this.editConfig.showTimer = this.playerConfig.metadata.showTimer ? this.playerConfig.metadata.showTimer : '';
@@ -75,7 +75,6 @@ export class PlayerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("result", result);
       if (result) {
         this.updateConfig(result);
       }
@@ -117,9 +116,4 @@ export class PlayerComponent implements OnInit {
     this.setConfig();
     this.changeConfig();
   }
-
-  goBack() {
-    
-  }
-
 }
