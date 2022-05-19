@@ -46,5 +46,17 @@
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
+  },
+  "/assets": {
+    "target": "http://localhost:3000/assets",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/latex": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
   }
 }
