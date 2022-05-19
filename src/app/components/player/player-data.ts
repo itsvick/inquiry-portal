@@ -40,8 +40,8 @@ export const SamplePlayerData = {
       'host': '',
       'endpoint': '/data/v3/telemetry',
       'userData': {
-        'firstName': 'Diptesh',
-        'lastName': 'Mukherjee'
+        'firstName': 'John',
+        'lastName': 'Doe'
       }
     },
     'metadata': undefined,
@@ -54,7 +54,7 @@ export const SamplePlayerData = {
         'showReplay': false,
         'showExit': false,
       },
-      showDeviceOrientation: true,
+      showDeviceOrientation: false,
     },
   }
 }
