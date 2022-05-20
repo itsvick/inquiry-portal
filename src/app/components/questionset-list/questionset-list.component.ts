@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigationService } from 'src/app/services/navigation.service';
 @Component({
   selector: 'app-questionset-list',
   templateUrl: './questionset-list.component.html',
@@ -9,8 +8,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
 export class QuestionsetListComponent implements OnInit {
   questionsetList: any;
   constructor(
-    private router: Router,
-    public navigationService: NavigationService) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.questionsetList = [
@@ -22,6 +20,10 @@ export class QuestionsetListComponent implements OnInit {
 
   navigateToQuestionset(id): void {
     this.router.navigate(['/questionset-editor', id]);
+  }
+
+  navigatetoHome(): void {
+    this.router.navigate(['/']);
   }
 
 }
