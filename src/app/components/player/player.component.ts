@@ -21,7 +21,7 @@ export class PlayerComponent implements OnInit {
     showSubmitConfirmation: '',
     summaryType: '',
     showTimer: '',
-  }
+  };
   constructor(
     private dataService: DataService,
     private questionSetService: QuestionCursorImplementationService,
@@ -36,14 +36,14 @@ export class PlayerComponent implements OnInit {
     });
   }
 
-  getContent(identifier: string) {
+  getContent(identifier: string): void {
     this.questionSetService.getQuestionSet(identifier).subscribe(res => {
       this.initializePlayer(res);
       this.setConfig();
     });
   }
 
-  initializePlayer(metadata) {
+  initializePlayer(metadata): void {
     this.playerConfig = {
       context: SamplePlayerData.playerConfig.context,
       config: SamplePlayerData.playerConfig.config,
@@ -52,14 +52,14 @@ export class PlayerComponent implements OnInit {
     };
   }
 
-  setConfig() {
-    this.editConfig.showFeedback = this.playerConfig.metadata.children.every(child => child.showFeedback === "Yes") ? "Yes" : "No";
+  setConfig(): void {
+    this.editConfig.showFeedback = this.playerConfig.metadata.children.every(child => child.showFeedback === 'Yes') ? 'Yes' : 'No';
     this.editConfig.showSubmitConfirmation = this.playerConfig.metadata.requiresSubmit ? this.playerConfig.metadata.requiresSubmit : '';
     this.editConfig.summaryType = this.playerConfig.metadata.summaryType ? this.playerConfig.metadata.summaryType : '';
     this.editConfig.showTimer = this.playerConfig.metadata.showTimer ? this.playerConfig.metadata.showTimer : '';
   }
 
-  changeConfig() {
+  changeConfig(): void {
     const metadata = { ...this.playerConfig.metadata };
     this.playerConfig = undefined;
     setTimeout(() => {
@@ -67,7 +67,7 @@ export class PlayerComponent implements OnInit {
     });
   }
 
-  openDialog() {
+  openDialog(): void {
     const dialogRef = this.dialog.open(EditConfigurationComponent, {
       data: {
         config: this.editConfig
@@ -81,15 +81,15 @@ export class PlayerComponent implements OnInit {
     });
   }
 
-  updateConfig(result) {
+  updateConfig(result): void {
     if (result.showFeedback) {
       if (result.showFeedback === 'Yes') {
         this.playerConfig.metadata.children.forEach(child => {
-          child.showFeedback = "Yes";
+          child.showFeedback = 'Yes';
         });
       } else {
         this.playerConfig.metadata.children.forEach(child => {
-          child.showFeedback = "No";
+          child.showFeedback = 'No';
         });
       }
     }
@@ -107,8 +107,8 @@ export class PlayerComponent implements OnInit {
 
       if (result.showTimer === 'Yes' && !this.playerConfig.metadata.timeLimits) {
         this.playerConfig.metadata.timeLimits = {
-          maxTime: "120",
-          warningTime: "10"
+          maxTime: '120',
+          warningTime: '10'
         };
       }
     }

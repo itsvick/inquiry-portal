@@ -13,11 +13,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openPlayerPage() {
+  openPlayerPage(): void {
     this.router.navigate(['/content-list']);
   }
   openEditorPage(): void {
-    this.router.navigate(['/questionset-editor']);
+    this.router.navigate(['/questionset-list']);
   }
 
 }
