@@ -3,15 +3,50 @@
       <mat-icon>arrow_back</mat-icon>&nbsp;Back
     </button>
   </mat-toolbar>
-  
+
   <div class="d-flex">
     <div class="left-content">
       <!-- <app-filter [filters]="filters" (filterChange)="onFilterChange($event)"></app-filter> -->
+      <div class="sb-sidebar-menu">
+        <h3 class="font-700 mat-h3 mt-10">Question Set</h3>
+        <ul>
+           <li class="active mb-0">Create</li>
+           <li class="mb-0">All my content</li>
+           <li class="mb-0">Course Batches</li>
+        </ul>
+     </div>
     </div>
     <div class="right-content">
-      <div class="container">
-        <h2 class="my-20 mat-h2">Choose a questionset</h2>
-  
+      <div class="px-30 mt-20">
+        <h3 class="m-0 mat-h2 text-left pb-20">Choose a questionset</h3>
+        <div class="sb-table-container">
+          <table class="sb-table sb-table-hover">
+          <thead>
+              <tr>
+                <th>Content</th>
+                <th>Status</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <td>Sample Questionset</td>
+              <td>Live</td>
+              </tr>
+              <tr>
+                <td>Sample Questionset</td>
+                <td>Live</td>
+                </tr>
+                <tr>
+                  <td>Sample Questionset</td>
+                  <td>Live</td>
+                  </tr>
+                  <tr>
+                    <td>Sample Questionset</td>
+                    <td>Live</td>
+                    </tr>
+          </tbody>
+          </table>
+
         <div *ngIf="questionsetList.length">
           <!-- <h3 class="mb-10 mat-h3 text-center font-weight-bold">Sample Questionset</h3> -->
           <div class="content-box">
@@ -21,7 +56,7 @@
           </div>
         </div>
       </div>
-  
+
       <h4 class="text-center" *ngIf="!questionsetList.length">Questionset not available!</h4>
     </div>
   </div>
