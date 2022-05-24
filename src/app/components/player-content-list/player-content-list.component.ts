@@ -42,18 +42,18 @@ export class PlayerContentListComponent implements OnInit {
     console.log('Filtered List', this.filteredList);
   }
 
-  playContent(content) {
+  playContent(content): void {
     this.router.navigate(['/player', content.id]);
   }
 
-  resetFilter() {
+  resetFilter(): void {
     this.filteredList = {
       mcq: [],
       sa: []
-    }
+    };
   }
 
-  onFilterChange(filters: IFilter[]) {
+  onFilterChange(filters: IFilter[]): void {
     this.resetFilter();
     filters.map(filter => {
       if (filter.type === 'mcq') {
@@ -79,7 +79,7 @@ export class PlayerContentListComponent implements OnInit {
               default:
                 console.warn('Invalid filter option');
             }
-          })
+          });
         }
       } else if (filter.type === 'sa' && filter.selected) {
         this.filteredList.sa = SampleContentList.sa;
@@ -89,7 +89,7 @@ export class PlayerContentListComponent implements OnInit {
     console.log(this.filteredList);
   }
 
-  updateFilterList(type: string, category: string) {
+  updateFilterList(type: string, category: string): void {
     const categoryContents = SampleContentList[type].filter(content => content.category === category)
     if (categoryContents.length) {
       this.filteredList[type] = this.filteredList[type].concat(categoryContents);
