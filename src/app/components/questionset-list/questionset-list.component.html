@@ -15,7 +15,7 @@
     </div>
     <div class="right-content">
       <div class="px-30 mt-20">
-        <div class="sb-table-container" *ngIf="questionsetList.length">
+        <div class="sb-table-container" *ngIf="questionsetList?.length">
           <table class="sb-table sb-table-hover">
           <thead>
               <tr>
@@ -32,6 +32,6 @@
           </table>
       </div>
 
-      <h4 class="text-center" *ngIf="!questionsetList.length">Questionset not available!</h4>
+      <h4 class="text-center" *ngIf="!questionsetList?.length">Questionset not available!</h4>
     </div>
   </div>

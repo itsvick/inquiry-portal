@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of, throwError } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { ApiEndPoints } from '../app.constant';
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class ContentService {
 
   baseUrl: string = environment.baseUrl;
   constructor(private httpClient: HttpClient) { }

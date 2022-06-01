@@ -5,7 +5,7 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ApiEndPoints } from '../app.constant';
-import { DataService } from './data.service';
+import { ContentService } from './content.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ import { DataService } from './data.service';
 export class QuestionCursorImplementationService implements QuestionCursor {
 
   baseUrl: string = environment.baseUrl;
-  constructor(private dataService: DataService) { }
+  constructor(private contentService: ContentService) { }
 
   getQuestions(identifiers: string[], parentId?: string): Observable<Question> {
     const option: any = {
@@ -24,7 +24,7 @@ export class QuestionCursorImplementationService implements QuestionCursor {
         }
       }
     };
-    return this.dataService.post(option).pipe(map((data) => {
+    return this.contentService.post(option).pipe(map((data) => {
       return data.result;
     }));
   }
@@ -38,12 +38,12 @@ export class QuestionCursorImplementationService implements QuestionCursor {
         }
       }
     };
-    return this.dataService.post(option).pipe(map((data: any) => data.result));
+    return this.contentService.post(option).pipe(map((data: any) => data.result));
   };
 
   getQuestionSet(identifier: string): Observable<any> {
-    const hierarchy = this.dataService.get(`${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
-    const questionSetResponse = this.dataService.get(`${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
+    const hierarchy = this.contentService.get(`${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
+    const questionSetResponse = this.contentService.get(`${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
     return (
       forkJoin([hierarchy, questionSetResponse]).pipe(map((res: any) => {
         const questionSet = res[0]?.result.questionSet;
