@@ -31,6 +31,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
 import { EditorCursorImplementationService } from './editor-cursor-implementation.service';
+import { QuestionsetListComponent } from './components/questionset-list/questionset-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { EditorCursorImplementationService } from './editor-cursor-implementatio
     PlayerContentListComponent,
     EditConfigurationComponent,
     QuestionsetEditorComponent,
-    FilterComponent
+    FilterComponent,
+    QuestionsetListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class DataService {
   baseUrl: string = environment.baseUrl;
   constructor(private httpClient: HttpClient) { }
 
+  // tslint:disable-next-line:typedef
   getContent(contentId: string) {
     const params: HttpParams = new HttpParams()
       // tslint:disable-next-line
@@ -27,6 +28,7 @@ export class DataService {
     }));
   }
 
+  // tslint:disable-next-line:typedef
   getQuestionSet(identifier: string) {
     const hierarchy = this.httpClient.get(`${ApiEndPoints.getQuestionSetHierarchy}${identifier}`);
     const questionSetResponse = this.httpClient.get(`${this.baseUrl}${ApiEndPoints.questionSetRead}${identifier}?fields=instructions`);
@@ -42,6 +44,7 @@ export class DataService {
       ));
   }
 
+  // tslint:disable-next-line:typedef
   get(url: string)  {
     return this.httpClient.get(url);
   }
