@@ -13,7 +13,7 @@ import { SamplePlayerData } from './player-data';
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-
+  showPotrait = false;
   playerConfig: QumlPlayerConfig;
   editConfig = {
     showFeedback: '',
@@ -32,6 +32,12 @@ export class PlayerComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: any) => {
       this.getContent(params.id);
     });
+  }
+  switchToPotraitMode() {
+    this.showPotrait = true;
+  }
+  switchToLandscapeMode() {
+    this.showPotrait = false;
   }
 
   getContent(identifier: string): void {
@@ -110,6 +116,7 @@ export class PlayerComponent implements OnInit {
         };
       }
     }
+    
 
     this.setConfig();
     this.changeConfig();
