@@ -8,9 +8,10 @@ import { NavigationEnd, Router } from '@angular/router';
 export class NavigationService {
 
   private history: string[] = [];
+  public nextContents = [];
   constructor(private router: Router, private location: Location) { }
 
-  public watchHistory() {
+  public watchHistory(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.history.push(event.urlAfterRedirects);
@@ -18,16 +19,16 @@ export class NavigationService {
     });
   }
 
-  public getHistory() {
+  public getHistory(): string[] {
     return this.history;
   }
 
-  public goBack() {
+  public goBack(): void {
     this.history.pop();
     if (this.history.length > 0) {
-      this.location.back()
+      this.location.back();
     } else {
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/');
     }
   }
 }
