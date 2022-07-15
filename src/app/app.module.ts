@@ -56,7 +56,6 @@ import { UsersComponent } from './components/users/users.component';
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule,
     HttpClientModule,
     QumlLibraryModule,
     CarouselModule.forRoot(),
@@ -71,7 +70,7 @@ import { UsersComponent } from './components/users/users.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CollectionEditorLibraryModule,
-    RouterModule.forRoot([])
+    AppRoutingModule
   ],
   providers: [
     {
